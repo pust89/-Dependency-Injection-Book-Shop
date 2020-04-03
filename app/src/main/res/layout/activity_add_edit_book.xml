@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="book"
+            type="com.pustovit.dibookshop.model.entity.Book" />
+
+        <variable
+            name="clickHandlerAddEdit"
+            type="com.pustovit.dibookshop.view.AddEditBookActivity.ClickHandlerAddEdit" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp"
+        android:weightSum="6"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/styleTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title:" />
+
+        <EditText
+            android:id="@+id/etTitle"
+            style="@style/styleTitle"
+            android:layout_weight="1"
+            android:maxLength="100"
+            android:text="@={book.book_title}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"/>
+
+        <TextView
+            style="@style/styleTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description:"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/etDescription"
+
+                    android:text="@={book.book_description}"
+                    style="@style/styleDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:inputType="textPersonName"/>
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <TextView
+                style="@style/styleTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price:"/>
+
+            <EditText
+                android:id="@+id/etPrice"
+                style="@style/stylePrice"
+                bind:textPriceAddEdit="@={book.book_price}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberDecimal"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/btnSave"
+            style="@style/styleTitle"
+            android:onClick="@{clickHandlerAddEdit::onClickBtnSave}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_green_dark"
+            android:text="Save"
+            android:textColor="#FFF" />
+    </LinearLayout>
+</layout>

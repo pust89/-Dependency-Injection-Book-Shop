@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="dropDownSpinnerItem">#F57F17</color>
+    <color name="selectedSpinnerItem">#4CAF50</color>
+    <color name="textColorMain">#000F61</color>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="app_name">DiBookShop</string>
+    <string name="action_settings">Settings</string>
+    <string name="database_name">books_database</string>
+
+</resources>
