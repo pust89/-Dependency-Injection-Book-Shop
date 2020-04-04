@@ -8,6 +8,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModel;
 
 import com.pustovit.dibookshop.model.Repository;
 import com.pustovit.dibookshop.model.entity.Book;
@@ -17,22 +18,15 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
-public class MainActivityViewModel extends AndroidViewModel {
+public class MainActivityViewModel extends ViewModel {
     private static final String TAG = "tag";
     private Repository repository;
     private Category selectedCategory;
 
 
-
-    public MainActivityViewModel(@NonNull Application application) {
-        super(application);
-        repository = new Repository(application);
-        getSelectedCategoryFromPref();
+    public MainActivityViewModel(Repository repository) {
+        this.repository = repository;
     }
-
-
-
-
 
     public LiveData<List<Category>> getCategoriesLiveData() {
         return repository.getCategoriesLiveData();
